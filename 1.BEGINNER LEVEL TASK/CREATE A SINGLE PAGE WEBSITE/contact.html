@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="images/slider/tree.jpg" type="image/x-icon">
+    <title>Planty Store</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="header4">
+    <nav>
+    <ul>
+    <li><a href="index.html" >Home</a></li>
+    <li><a href="flowering.html">Flowering Plants</a></li>
+    <li><a href="non_flowering.html">Non-Flowering Plants</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html" class="active">Contact Us</a></li>
+    </ul>
+  </nav>
+  </div>
+  <br>
+ <div class="contact">
+  <h1 align="center">Contact Us</h1>
+<div class="container">
+  <div class="row">
+
+    <div class="contact-column">
+      <form name="myform" method="post" onsubmit="return submitform()" > 
+        <label for="fname">Full Name:</label>
+        <input type="text" id="fname" name="firstname" placeholder="Ex:Sajja Saiteja">
+        <br>
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Ex:9966494655"><br>
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="BANGLADESH">Bangladesh</option>
+          <option value="Canda">Canada</option>
+          <option value="FRANCE">France</option>
+          <option value="HUNGARY">Hungary</option>
+          <option value="INDIA">India</option>
+          <option value="ITALY">Italy</option>
+          <option value="JAPAN">Japan</option>
+          <option value="RUSSIA">Russia</option>
+           <option value="UAE">UAE</option>
+           <option value="USA">USA</option>
+        </select>
+        <br><br>
+        <label for="query">Query:</label>
+        <textarea id="query" name="query" placeholder="Write your query in detail" style="height:170px" rows="10" cols="30"></textarea>
+        <center>
+          <p><button class="button" >submit</button></p>
+      </center>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<br><br>
+<div class="sai2">
+<div class="footer">
+  <p>All rights reserved &copy 2020 planty.com<br>
+  Designed by Saiteja Sajja<br>
+  <a href=""mailto:saitejasajja@gmail.comn">Email : saitejasajja10@gmail.com&nbspContact : +91 7032889041</a></p>
+</div>
+</div>
+<script>
+function submitform(){  
+var name=document.myform.firstname.value;  
+var phone=document.myform.mobile.value;
+var query=document.myform.query.value; 
+var numbers = /^[0-9]+$/; 
+var alphabets=/^[A-Za-z]+$/;
+
+if (name==null || name==""){  
+  alert("Name and Mobile No. can't be blank");  
+  return false;  
+}
+else if(phone.length<10 || phone.length>10){  
+  alert("Number must be  10  characters long.");  
+  return false;  
+  }  
+  else if(name.match(numbers))
+      {
+      alert("Enter only Alphabets in Full Name");
+      return false;
+      }
+  else if(phone.match(alphabets))
+  {
+    alert("Enter Only Numbers in phone");
+    return false;
+  }
+  else if(query.length>=200)
+  {
+    alert("Query Should have 200 Characters only");
+    return false;
+  }
+  else{
+    alert(" Submitted Successfully,Thank u for submitting the form");
+    return true;
+  }
+} 
+</script>
+  </body>
+  </html>
